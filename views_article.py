@@ -16,7 +16,7 @@ def add_article(request):
     用于新增文章
     :param request: {
         articleID, authorID, articleText
-            articleAudio(默认先不管这个 默认这个为空) articleTitle
+            articleAudio, articleTitle
                 articleType1 articleType2 articleType3
         }
     :return: json形式的 {result: "yes"/"no"}
@@ -85,7 +85,7 @@ def show_an_article(request):
                 "articleType1": article.article_type1,
                 "articleType2": article.article_type2,
                 "article_type3": article.article_type3,
-                "likeJudge": likes_judge
+                "likeJudge": likes_judge,
             }
             article.article_views += 1
             article.save()
